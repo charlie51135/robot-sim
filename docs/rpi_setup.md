@@ -9,7 +9,7 @@ References:
 
 
 ## Install ubuntu 20.04 server image using Raspberry Pi Imager
-1. Setup name, user, and wifi in configuration manager
+1. Setup name, user, and wifi in configuration manager  
 	To add Wifi manually `sudo nano /etc/netplan/50-cloud-init.yaml`
 
 2. On linux system: open system-boot drive in terminal  
