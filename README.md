@@ -1,28 +1,5 @@
 # ROS Simulation for Pololu Romi Robot
 
-<div style="display: flex; justify-content: left; align-items: left;">
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_robot.jpg" width="200" height="200"/>
-      <p>Romi Robot</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_model.gif" width="200" height="200"/>
-      <p>Romi Robot Model</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_rviz.png" width="350" height="200"/>
-      <p>RViz Display</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_gazebo.png" width="350" height="200"/>
-      <p>Gazebo Sim</p>
-   </div>
-</div>
-
-
 ## Overview
 This project is a ROS simulation for the Pololu Romi robot. The Romi communicates with a Raspberry Pi running Ubuntu 20.04 and ROS Noetic. It includes models, controllers, and necessary configurations to simulate the Romi robot in a ROS environment. The robot operation can be visualized using RViz and also simulated with Gazebo. The goal is to provide a platform for testing and developing robotic algorithms in a simulated environment and deploy them on actual hardware.
 
@@ -34,6 +11,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
   - [Parts List](#parts-list)
   - [Installation](#installation)
   - [Usage](#usage)
+- [Images](#images)
 - [Additional Documentation](#additional-documentation)
 
 
@@ -49,7 +27,6 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 - **3D Printed LiDAR Plate (w/Supports)**
 - **3D Printed Camera Housing**
 - **40 Pin Pi Header Extender (Optional)**
-
 
 
 ## Installation
@@ -100,6 +77,32 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 
 5. Launch the LiDAR node on the Raspberry Pi:
 `roslaunch ldlidar ld19.launch`
+
+
+# Images
+
+<div style="display: flex; justify-content: left; align-items: left;">
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_robot.jpg" width="200" height="200"/>
+      <p>Romi Robot</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_model.gif" width="200" height="200"/>
+      <p>Romi Robot Model</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_rviz.png" width="350" height="200"/>
+      <p>RViz Display</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_gazebo.png" width="350" height="200"/>
+      <p>Gazebo Sim</p>
+   </div>
+</div>
+
 
 # Additional Documentation
 
