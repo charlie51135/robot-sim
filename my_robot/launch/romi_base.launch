@@ -1,0 +1,25 @@
+<launch>
+    <!-- Set the use_sim_time parameter for simulation -->
+    <!-- <param name="/use_sim_time" value="true"/> -->
+
+    <!-- Launch romi description -->
+    <!-- <include file="$(find my_robot)/launch/romi_description.launch"/> -->
+
+    <!-- Convert XACRO to URDF and load to parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/urdf/romi.urdf.xacro'"/>
+    
+    <!-- Run the robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    </node>
+
+
+    <!-- <node name="romi_hw_interface" pkg="romi_base" type="romi_base"/> -->
+
+    <!-- Launch romi controller manager -->
+    <!-- <include file="$(find my_robot)/launch/romi_control.launch"/> -->
+    <!-- Launch RVIZ -->
+    <include file="$(find my_robot)/launch/romi_rviz.launch"/>
+    <!-- Launch bluetooth controller -->
+    <include file="$(find my_robot)/launch/joy_controller.launch"/>
+</launch>

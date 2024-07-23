@@ -1,0 +1,15 @@
+<launch>
+    <!-- Set the use_sim_time parameter for simulation -->
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- Launch romi description -->
+    <include file="$(find my_robot)/launch/romi_description.launch"/>
+    <!-- Launch romi controller manager -->
+    <include file="$(find my_robot)/launch/romi_control.launch"/>
+    <!-- Launch RVIZ -->
+    <include file="$(find my_robot)/launch/romi_rviz.launch"/>
+    <!-- Launch Gazebo -->
+    <include file="$(find my_robot)/launch/romi_gazebo.launch"/>
+    <!-- Launch bluetooth controller -->
+    <include file="$(find my_robot)/launch/joy_controller.launch"/>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <!-- Launch RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot)/config/romi_config.rviz" />
+</launch>

@@ -1,0 +1,46 @@
+<launch>
+    <!-- Set the use_sim_time parameter for simulation -->
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- Convert XACRO to URDF and load to parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/urdf/romi.urdf.xacro'"/>
+    
+    <!-- Run the robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/robot/joint_states" />
+    </node>
+
+    <!-- Launch romi controller manager -->
+    <include file="$(find my_robot)/launch/romi_control.launch"/>
+    <!-- Launch RVIZ -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot)/config/config.rviz" />
+
+    <!-- Setup Gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find my_robot)/worlds/test.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="recording" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- Spawn the robot model in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model robot -param robot_description -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0" />
+
+    <!-- Launch bluetooth controller -->
+    <!-- Set the joystick device parameter -->
+    <param name="joy_node/dev" value="/dev/input/js1"/>
+
+    <!-- Launch the joy node -->
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
+
+    <!-- Launch the teleop_twist_joy node -->
+    <node name="teleop_twist_joy_robot" pkg="teleop_twist_joy" type="teleop_node" output="screen">
+        <!-- <remap from="cmd_vel" to="/diff_drive_controller/cmd_vel"/> -->
+        <!-- For Gazebo sim -->
+        <remap from="cmd_vel" to="/robot/diff_drive_controller/cmd_vel"/>
+    </node>
+</launch>

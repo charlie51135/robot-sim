@@ -1,0 +1,12 @@
+<launch>
+    <!-- Convert XACRO to URDF and load to parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/robot.urdf.xacro'"/>
+    <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/urdf/romi.urdf.xacro'"/> -->
+    
+    <!-- Run the robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <!-- for sim only for now -->
+        <!-- <remap from="/joint_states" to="/robot/joint_states"/> -->
+    </node>
+</launch>

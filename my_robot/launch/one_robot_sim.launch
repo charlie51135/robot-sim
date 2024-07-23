@@ -1,0 +1,45 @@
+<launch>
+    <!-- Set the use_sim_time parameter for simulation -->
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- Convert XACRO to URDF and load to parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/robot.urdf.xacro'"/>
+
+    <!-- Load controller configurations from YAML file -->
+    <!-- <rosparam file="$(find my_robot)/config/controllers.yaml" command="load"/> -->
+
+    <!-- Start controller manager -->
+    <!-- <node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node> -->
+
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find my_robot)/config/controllers.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/robot" args="diff_drive_controller joint_state_controller">
+        <!-- <remap from="/cmd_vel" to="/robot/cmd_vel"/> -->
+    </node>
+
+    <!-- Run the robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/robot/joint_states" />
+    </node>
+
+    <!-- Launch Gazebo with an empty world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+    
+    <!-- Spawn the robot model in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+          args="-param robot_description -urdf -model my_robot_model" respawn="false" output="screen"/>
+
+    <!-- Launch RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot)/config/romi_config.rviz" />
+
+    <!-- Launch bluetooth controller -->
+    <include file="$(find my_robot)/launch/joy_controller.launch"/>
+
+</launch>

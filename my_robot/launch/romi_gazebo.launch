@@ -1,0 +1,16 @@
+<launch>
+    <!-- Setup Gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find my_robot)/worlds/test.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="recording" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- Spawn the robot model in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model robot -param robot_description -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0" />
+</launch>
+
