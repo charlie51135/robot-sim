@@ -1,6 +1,3 @@
 <launch>
-
- <node name="LD19" pkg="ldlidar" type="ldlidar" args="LD19" output="screen" >
- </node>
-
+    <node name="LD19" pkg="ldlidar" type="ldlidar" args="LD19" output="screen"/>
 </launch>
