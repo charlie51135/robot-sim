@@ -1,4 +1,4 @@
-# Getting two robots to properly display in Rviz and Gazebo
+# Getting multiple robots to properly display in Rviz and Gazebo
 
 1. Use the group tag to create two robot namespaces.  
     ```

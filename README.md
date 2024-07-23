@@ -109,11 +109,10 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 * [Raspberry Pi Setup](docs/rpi_setup.md)
 * [Camera Setup](docs/rpi_camera.md)
 * [Bluetooth Controller Setup](docs/bluetooth_controller.md)
-* [Multiple Machines ROS Setup](docs/multiple_machines.md)
+* [Multiple Robots ROS Setup](docs/two_robots_rviz.md)
 * [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)
 
 <br>
 
 * [Ros Control Notes](docs/ros_control.md)
-* [Two Simultaneous Robots](docs/two_robots_rviz.md)
 * [Wifi AP](docs/wifi_ap.md)
