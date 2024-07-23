@@ -29,22 +29,7 @@ References:
 
 4. Create decompression script  
 	`nano auto_decompress_kernel`
-	```bash        struct Data
-        {                                   // Address (byte)
-            bool yellow, green, red;            // 0 1 2
-            bool buttonA, buttonB, buttonC;     // 3 4 5 
-
-            int16_t leftMotor, rightMotor;      // 6-7 8-9
-            uint16_t batteryMillivolts;         // 10-11
-            uint16_t analog[6];                 // 12-23
-
-            bool playNotes;                     // 24
-            char notes[14];                     // 25-38
-
-            int16_t leftEncoder, rightEncoder;  // 39-40 41-42
-
-            bool newTarget;                     // 43
-        };
+	```bash
 	#!/bin/bash -e
 
 	#Set Variables
