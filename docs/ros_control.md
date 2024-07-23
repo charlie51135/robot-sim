@@ -1,5 +1,18 @@
 # Set up ros_control for diff drive robot
 
+
+## Overview
+
+
+<div style="display: flex; justify-content: left; align-items: left;">
+   <div style="text-align: center; margin: 10px;">
+      <img src="files/gazebo_ros_control.png" width="100%" height="100%"/>
+      <p><a href="http://wiki.ros.org/ros_control">http://wiki.ros.org/ros_control</a></p>
+   </div>
+</div>
+
+
+
 ## Notes:
 For simulation, the diff_drive_controller communicates with gazebo_ros_control.
 For the real robol, a controller manager is used to handle the resources of hardware_interace.

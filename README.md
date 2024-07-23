@@ -11,7 +11,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
   - [Parts List](#parts-list)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Images](#images)
+  - [Images](#images)
 - [Additional Documentation](#additional-documentation)
 
 
@@ -24,9 +24,9 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 - **6 AA Batteries**
 - **M2 Assorted Nylon/Brass Standoffs**
 - **13 M2x6mm Machine Screws**
-- **3D Printed LiDAR Plate (w/Supports)**
-- **3D Printed Camera Housing**
 - **40 Pin Pi Header Extender (Optional)**
+- [**3D Printed LiDAR Plate (w/Supports)**](docs/files/CAD/lidar_mount.stl)
+- [**3D Printed Camera Housing**](https://www.printables.com/de/model/693396/files)
 
 
 ## Installation
@@ -79,7 +79,7 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 `roslaunch ldlidar ld19.launch`
 
 
-# Images
+## Images
 
 <div style="display: flex; justify-content: left; align-items: left;">
    <div style="text-align: center; margin: 10px;">
