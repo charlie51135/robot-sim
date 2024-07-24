@@ -122,9 +122,11 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 
 # Additional Documentation
 
-* [Ros Control Notes](docs/ros_control.md)
+* [Ros Control Setup](docs/ros_control.md)
 * [Raspberry Pi Setup](docs/rpi_setup.md)
 * [Camera Setup](docs/rpi_camera.md)
+* [Hardware Testing](docs/hardware_testing.md)
+* [Software Testing](docs/software_testing.md)
 </br>
 
 * [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)

@@ -150,7 +150,7 @@ Since 20 was just written into the right encoder register, the subsequent read w
 <div style="display: flex; justify-content: left; align-items: left;">
    <div style="text-align: center; margin: 10px;">
       <img src="files/i2c_read_failure.png" width="100%" height="100%"/>
-      <p>Successful 4-byte read</p>
+      <p>Failed 4-byte read</p>
    </div>
 </div>
 
