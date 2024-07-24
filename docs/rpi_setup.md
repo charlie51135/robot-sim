@@ -9,8 +9,8 @@ References:
 
 
 ## Install ubuntu 20.04 server image using Raspberry Pi Imager
-1. Setup name, user, and wifi in configuration manager  
-	To add Wifi manually `sudo nano /etc/netplan/50-cloud-init.yaml`
+1. Setup name, user, and WiFi in configuration manager.  
+	To add WiFi manually: `sudo nano /etc/netplan/50-cloud-init.yaml`
 
 2. On linux system: open system-boot drive in terminal  
 	`sudo dd if=vmlinuz bs=1 | zcat > vmlinux`
@@ -105,7 +105,7 @@ Perm fix?:
 `sudo crontab -e`  
 `@reboot dhclient -v`
 
-Check if using wifi or lan: `ip route`  
+Check if using WiFi or lan: `ip route`  
 To change default from wlan0 to eth0
 `sudo apt install net-tools`  
 `ip route`  

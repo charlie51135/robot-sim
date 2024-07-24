@@ -9,6 +9,11 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
   - [Parts List](#parts-list)
+    - [Robotics Kit](#robotics-kit)
+    - [Electronics](#electronics)
+    - [Power Supply](#power-supply)
+    - [Hardware](#hardware)
+    - [3D Printed Parts](#3d-printed-parts)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Images](#images)
@@ -16,17 +21,28 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 
 ## Parts List
+
+### Robotics Kit
 - **Pololu Romi Robot Kit for FIRST**
+
+### Electronics
 - **Raspberry Pi Model 4B**
 - **Raspberry Pi Camera V2.1**
 - **LD19 LiDAR Module**
 - **Compact USB or MicroSD card**
-- **6 AA Batteries**
+
+### Power Supply
+- **6 Rechargable AA Batteries**
+
+### Hardware
 - **M2 Assorted Nylon/Brass Standoffs**
 - **13 M2x6mm Machine Screws**
 - **40 Pin Pi Header Extender (Optional)**
+
+### 3D Printed Parts
 - [**3D Printed LiDAR Plate (w/Supports)**](docs/files/CAD/lidar_mount.stl)
 - [**3D Printed Camera Housing**](https://www.printables.com/de/model/693396/files)
+
 
 
 ## Installation
@@ -64,7 +80,7 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
    
 ## Usage
 
-1. Configure [WiFi settings](docs/multiple_machines.md)
+1. Configure [WiFi settings](docs/ros_ip_setup.md)
 
 2. Launch RViz, the robot desciption and the controllers from a PC:
 `roslaunch my_robot romi_base.launch`
@@ -106,13 +122,12 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 
 # Additional Documentation
 
+* [Ros Control Notes](docs/ros_control.md)
 * [Raspberry Pi Setup](docs/rpi_setup.md)
 * [Camera Setup](docs/rpi_camera.md)
+</br>
+
+* [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)
 * [Bluetooth Controller Setup](docs/bluetooth_controller.md)
 * [Multiple Robots ROS Setup](docs/two_robots_rviz.md)
-* [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)
-
-<br>
-
-* [Ros Control Notes](docs/ros_control.md)
 * [Wifi AP](docs/wifi_ap.md)
