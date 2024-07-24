@@ -23,25 +23,25 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 ## Parts List
 
 ### Robotics Kit
-- **Pololu Romi Robot Kit for FIRST**
+- Pololu Romi Robot Kit
 
 ### Electronics
-- **Raspberry Pi Model 4B**
-- **Raspberry Pi Camera V2.1**
-- **LD19 LiDAR Module**
-- **Compact USB or MicroSD card**
+- Raspberry Pi Model 4B
+- Raspberry Pi Camera V2.1
+- LD19 LiDAR Module
+- Compact USB or MicroSD card
 
 ### Power Supply
-- **6 Rechargable AA Batteries**
+- 6 Rechargable AA Batteries
 
 ### Hardware
-- **M2 Assorted Nylon/Brass Standoffs**
-- **13 M2x6mm Machine Screws**
-- **40 Pin Pi Header Extender (Optional)**
+- M2 Assorted Nylon/Brass Standoffs
+- 13 M2x6mm Machine Screws
+- 40 Pin Pi Header Extender (Optional)
 
 ### 3D Printed Parts
-- [**3D Printed LiDAR Plate (w/Supports)**](docs/files/CAD/lidar_mount.stl)
-- [**3D Printed Camera Housing**](https://www.printables.com/de/model/693396/files)
+- [3D Printed LiDAR Plate (w/Supports)](docs/files/CAD/lidar_mount.stl)
+- [3D Printed Camera Housing](https://www.printables.com/de/model/693396/files)
 
 
 
