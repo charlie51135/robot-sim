@@ -83,16 +83,24 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 1. Configure [WiFi settings](docs/ros_ip_setup.md)
 
 2. Launch RViz, the robot desciption and the controllers from a PC:
-`roslaunch my_robot romi_base.launch`
+   ```console
+   roslaunch my_robot romi_base.launch
+   ```
 
-3. Launch the hardware interface on the Raspberry Pi:
-`roslaunch romi_base romi_hw.launch`
+1. Launch the hardware interface on the Raspberry Pi:
+   ```console
+   roslaunch romi_base romi_hw.launch
+   ```
 
-4. Launch the camera node on the Raspberry Pi:
-`roslaunch romi_camera romi_camera_node.launch`
+2. Launch the camera node on the Raspberry Pi:
+   ```console
+   roslaunch romi_camera romi_camera_node.launch
+   ```
 
-5. Launch the LiDAR node on the Raspberry Pi:
-`roslaunch ldlidar ld19.launch`
+1. Launch the LiDAR node on the Raspberry Pi:
+   ```console
+   roslaunch ldlidar ld19.launch
+   ```
 
 
 ## Images
@@ -127,6 +135,8 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 * [Camera Setup](docs/rpi_camera.md)
 * [Hardware Testing](docs/hardware_testing.md)
 * [Software Testing](docs/software_testing.md)
+* [Power Consumption](docs/power.md)
+
 </br>
 
 * [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)
