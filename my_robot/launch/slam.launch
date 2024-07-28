@@ -1,0 +1,16 @@
+<launch>
+    <!-- Launch slam_gmapping node -->
+    <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
+        <remap from="scan" to="LiDAR/LD19" />
+        <param name="odom_frame" value="odom" />
+        <param name="base_frame" value="base_link" />
+    </node>
+
+
+    <!-- <node pkg="slam_toolbox" type="sync_slam_toolbox_node" name="sync_slam_toolbox_node" output="screen" >
+        <param name="scan_topic" value="LiDAR/LD19" />
+        <param name="odom_frame" value="odom" />
+        <param name="base_frame" value="base_link" />
+    </node> -->
+
+</launch>

@@ -19,7 +19,7 @@ ROS control is a framework in the ROS ecosystem that enables the control of robo
 3. **Hardware Interface**:
    - The hardware interface provides an abstraction layer between the controllers and the robot's hardware.
    - It defines how the controllers communicate with the hardware components, through writing commands and recieving updated states.
-   - Runs a continous read/write loop that 
+   - Runs a continous read/write loop 
    - By using the standard ROS interface, new ROS Control plugins can be added without modification to the hardware interface.
   
 

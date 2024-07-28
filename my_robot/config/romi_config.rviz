@@ -6,9 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
-        - /Image1
-        - /LaserScan1
       Splitter Ratio: 0.5253863334655762
     Tree Height: 395
   - Class: rviz/Selection
@@ -115,6 +112,8 @@ Visualization Manager:
           Value: true
         lidar_frame:
           Value: true
+        map:
+          Value: true
         odom:
           Value: true
         right_wheel:
@@ -126,17 +125,18 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_link:
-            base_footprint:
-              {}
-            chassis:
-              lidar_frame:
+        map:
+          odom:
+            base_link:
+              base_footprint:
                 {}
-            left_wheel:
-              {}
-            right_wheel:
-              {}
+              chassis:
+                lidar_frame:
+                  {}
+              left_wheel:
+                {}
+              right_wheel:
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/Image
@@ -179,6 +179,16 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /map
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -207,7 +217,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 11.613652229309082
+      Distance: 8.916427612304688
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -215,8 +225,8 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0
-        Y: 0
+        X: -0.007748018018901348
+        Y: 0.000556826707907021
         Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
@@ -225,7 +235,7 @@ Visualization Manager:
       Near Clip Distance: 0.009999999776482582
       Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
-      Yaw: 3.0698490142822266
+      Yaw: 4.643172740936279
     Saved: ~
 Window Geometry:
   Displays:
