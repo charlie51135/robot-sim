@@ -1,7 +1,7 @@
 # ROS Simulation for Pololu Romi Robot
 
 ## Overview
-This project is a ROS simulation for the Pololu Romi robot. The Romi communicates with a Raspberry Pi running Ubuntu 20.04 and ROS Noetic. It includes models, controllers, and necessary configurations to simulate the Romi robot in a ROS environment. The robot operation can be visualized using RViz and also simulated with Gazebo. The goal is to provide a platform for testing and developing robotic algorithms in a simulated environment and deploy them on actual hardware.
+This project is a ROS simulation for the Pololu Romi robot. The Romi communicates with a Raspberry Pi running Ubuntu 20.04 and ROS Noetic. It includes models, controllers, and necessary configurations to simulate the Romi robot in a ROS environment. The goal is to provide a platform for testing and developing robotic algorithms.
 
 
 ## Table of Contents
@@ -14,9 +14,10 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
     - [Power Supply](#power-supply)
     - [Hardware](#hardware)
     - [3D Printed Parts](#3d-printed-parts)
+  - [Images](#images)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Images](#images)
+  - [System Overview](#system-overview)
 - [Additional Documentation](#additional-documentation)
 
 
@@ -43,6 +44,30 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 - [3D Printed LiDAR Plate (w/Supports)](docs/files/CAD/lidar_mount.stl)
 - [3D Printed Camera Housing](https://www.printables.com/de/model/693396/files)
 
+
+## Images
+
+<div style="display: flex; justify-content: left; align-items: left;">
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_robot.jpg" width="200" height="200"/>
+      <p>Romi Robot</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_model.gif" width="200" height="200"/>
+      <p>Romi Robot Model</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_rviz.png" width="350" height="200"/>
+      <p>RViz Display</p>
+   </div>
+
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/romi_slam.gif" width="350" height="200"/>
+      <p>RViz SLAM</p>
+   </div>
+</div>
 
 
 ## Installation
@@ -103,30 +128,35 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
    ```
 
 
-## Images
+## System Overview
 
 <div style="display: flex; justify-content: left; align-items: left;">
    <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_robot.jpg" width="200" height="200"/>
-      <p>Romi Robot</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_model.gif" width="200" height="200"/>
-      <p>Romi Robot Model</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_rviz.png" width="350" height="200"/>
-      <p>RViz Display</p>
-   </div>
-
-   <div style="text-align: center; margin: 10px;">
-      <img src="docs/files/romi_gazebo.png" width="350" height="200"/>
-      <p>Gazebo Sim</p>
+      <img src="docs/files/system_design.png" width="100%" height="100%"/>
+      <p>ROS Nodes Running By Device</p>
    </div>
 </div>
 
+</br>
+
+<div style="display: flex; justify-content: left; align-items: left;">
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/rqt_graph.png" width="100%" height="100%"/>
+      <p>ROS RQT Graph</p>
+   </div>
+</div>
+
+</br>
+
+<div style="display: flex; justify-content: left; align-items: left;">
+   <div style="text-align: center; margin: 10px;">
+      <img src="docs/files/tf_tree.png" width="100%" height="100%"/>
+      <p>ROS TF Tree</p>
+   </div>
+</div>
+
+</br>
+</br>
 
 # Additional Documentation
 
@@ -134,10 +164,11 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 * [Raspberry Pi Setup](docs/rpi_setup.md)
 * [Camera Setup](docs/rpi_camera.md)
 * [Power Consumption](docs/power.md)
+* [Accuracy Testing](docs/accuracy_testing.md)
 
 </br>
 
 * [Teleop-Twist-Keyboard Setup](docs/teleop_twist_keyboard.md)
 * [Bluetooth Controller Setup](docs/bluetooth_controller.md)
-* [Multiple Robots ROS Setup](docs/two_robots_rviz.md)
+* [Multiple Robots ROS Config](docs/two_robots_rviz.md)
 * [Wifi AP](docs/wifi_ap.md)

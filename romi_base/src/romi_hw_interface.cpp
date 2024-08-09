@@ -56,7 +56,7 @@ void RomiHWInterface::write(const ros::Time &time, const ros::Duration &period) 
 
     // Convert angular speed in rad/s to motor speed
     int left_motor_speed = velocityToMotorSpeed(cmd[LEFT_JOINT]);
-    int right_motor_speed = velocityToMotorSpeed(cmd[RIGHT_JOINT]);
+    int right_motor_speed = velocityToMotorSpeed(cmd[RIGHT_JOINT])+2;
 
     // std::cout << "Left angular velocity: " << cmd[LEFT_JOINT] << std::endl;
     // std::cout << "Left motor speed: " << left_motor_speed << std::endl;
@@ -107,6 +107,7 @@ double RomiHWInterface::angularToLinear(const double &angle) const {
     return angle * WHEEL_DIAMETER / 2.0;
 }
 
+// UNUSED
 // Convert linear velocity (m/s) into angular velocity (rad/s)
 // double RomiHWInterface::linearToAngular(const double &distance) const {
 //     return distance / WHEEL_DIAMETER * 2.0;

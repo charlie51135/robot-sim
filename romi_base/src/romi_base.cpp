@@ -19,6 +19,7 @@ int main(int argc, char **argv) {
     ros::Time prev_time = ros::Time::now();
     ros::Rate rate(50);
 
+    // Read, Update, Write loop
     while (ros::ok()) {
         const ros::Time time = ros::Time::now();
         const ros::Duration period = time - prev_time;
