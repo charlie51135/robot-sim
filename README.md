@@ -94,6 +94,8 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 ### Install Raspberry Pi Image
 
 1. Install the [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+   
+2. Install Ubuntu 20.04 Server
 
 ### Setup ROS workspaces
 
@@ -138,24 +140,35 @@ The PC will run the ROS master and display the RViz and Gazebo windows. The Rasp
    ```console
    roslaunch my_robot romi_base.launch
    ```
+   *Note: roslaunch will automatically start a [ROS Master](http://wiki.ros.org/Master) if one does not exist*  
 
-1. Launch the hardware interface on the Raspberry Pi:
+3. Launch the hardware interface on the Raspberry Pi:
    ```console
    roslaunch romi_base romi_hw.launch
    ```
 
-2. Launch the camera node on the Raspberry Pi:
+4. Launch the camera node on the Raspberry Pi:
    ```console
    roslaunch romi_camera romi_camera_node.launch
    ```
 
-1. Launch the LiDAR node on the Raspberry Pi:
+5. Launch the LiDAR node on the Raspberry Pi:
    ```console
    roslaunch ldlidar ld19.launch
    ```
+6. Launch the SLAM node on the PC:
+   ```console
+   roslaunch slam_toolbox online_async.launch
+   ```
 
+The nodes are modularized but may be launched together by adding an include line to a .launch file
+```xml
+<include file="$(find *package_name*)/launch/*launch_file_name*.launch"/>
+```
 
 ## System Overview
+
+The communication between the PC and the Raspberry Pi is through a WiFi network in which there is a single ROS Master. The PC is used for visualization, high-level control is done on the Raspberry Pi, and low-level control is done on the Romi. The Raspberry Pi communicates with the Romi through a hardware interface over i2c, described in [ROS Control](docs/ros_control.md).
 
 <div style="display: flex; justify-content: left; align-items: left;">
    <div style="text-align: center; margin: 10px;">
@@ -181,6 +194,7 @@ The PC will run the ROS master and display the RViz and Gazebo windows. The Rasp
       <p>ROS TF Tree</p>
    </div>
 </div>
+
 
 </br>
 </br>

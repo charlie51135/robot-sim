@@ -93,7 +93,7 @@ To un-install wiringPi:
 `./build uninstall`  
 
 Updated CMakeLists.txt  
-```
+```cmake
 link_directories(
   /usr/local/lib
 )
