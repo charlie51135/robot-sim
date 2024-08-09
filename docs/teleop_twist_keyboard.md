@@ -2,12 +2,12 @@
 
 ## Installation
 
-`sudo apt-get update`
-`sudo apt-get install ros-noetic-teleop-twist-keyboard`
+`sudo apt-get update`  
+`sudo apt-get install ros-noetic-teleop-twist-keyboard`  
 
 
 ## Run
-`rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+`rosrun teleop_twist_keyboard teleop_twist_keyboard.py`  
 
 ## Resolved issues
 

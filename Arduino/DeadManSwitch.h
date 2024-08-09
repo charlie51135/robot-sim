@@ -19,7 +19,8 @@ class DeadManSwitch {
           active = false;
         }
       }
-
+    }
+    
     bool isActive() {
       return active;
     }
@@ -35,4 +36,4 @@ class DeadManSwitch {
     }
 };
 
-#endif // DEAD_MAN_SWITCH_H
+#endif

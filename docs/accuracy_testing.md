@@ -7,7 +7,7 @@ The differential drive controller used in ROS calculates the position of the rob
 A 1-meter square was marked on the ground for the robot to travel.
 <div style="display: flex; justify-content: left; align-items: left;">
    <div style="text-align: center; margin: 10px;">
-      <img src="files/accuracy_test.png" width="100%" height="100%"/>
+      <img src="files/accuracy_test.png" width="50%" height="100%"/>
    </div>
 </div>
 

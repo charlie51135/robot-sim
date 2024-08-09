@@ -16,6 +16,9 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
     - [3D Printed Parts](#3d-printed-parts)
   - [Images](#images)
   - [Installation](#installation)
+    - [Upload the Arduino code to the Romi32U4](#upload-the-arduino-code-to-the-romi32u4)
+    - [Install Raspberry Pi Image](#install-raspberry-pi-image)
+    - [Setup ROS workspaces](#setup-ros-workspaces)
   - [Usage](#usage)
   - [System Overview](#system-overview)
 - [Additional Documentation](#additional-documentation)
@@ -72,7 +75,31 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ## Installation
 
-This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
+### Upload the Arduino code to the Romi32U4
+
+1. Install Pololu RPi Slave libarary and Romi32U4 library in the Arduino IDE
+
+2. Add the Pololu boards package url `https://files.pololu.com/arduino/package_pololu_index.json`
+
+3. Install Pololu A-Star Boards in the boards manager
+
+4. Install windows drivers https://www.pololu.com/docs/0J69/5.1
+
+5. Restart IDE
+
+6. Add [Arduino/DeadManSwitch.h](Arduino/DeadManSwitch.h) to the libraries folder
+
+7. Plug in Romi32U4 and upload [Arduino/RomiRPiSlave.ino](Arduino/RomiRPiSlave.ino)
+
+### Install Raspberry Pi Image
+
+1. Install the [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+
+### Setup ROS workspaces
+
+This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. This GitHub repo contains both the PC and RPi nodes and will automatically build the correct files based on the device architecture.  
+
+The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
 
 1. Create or `cd` into a ROS Noetic catkin workspace
    ```console

@@ -2,7 +2,7 @@
 Add `start_x=1` in boot/firmware/config.txt  
 
 Use compressed image transport  
-`sudo apt  install ros-noetic-compressed-image-transport`
+`sudo apt-get install ros-noetic-compressed-image-transport`
 
 # USB webcam (working)
 
@@ -45,17 +45,17 @@ chmod +x install_pivariety_pkgs.sh`
 `sudo reboot`  
 
 
+Attempt to build updated libcamera
+`sudo apt install python3-pip`  
+`sudo pip install meson --upgrade`  
+`pip install ply`  
 
-sudo apt install python3-pip  
-sudo pip install meson --upgrade  
-pip install ply  
+`git clone https://git.libcamera.org/libcamera/libcamera.git`  
+`cd libcamera`  
+`meson setup build`  
+`sudo ninja -C build install`  
 
-git clone https://git.libcamera.org/libcamera/libcamera.git  
-cd libcamera  
-meson setup build  
-sudo ninja -C build install  
-
-export PATH="$PATH:/usr/local/bin"  
+`export PATH="$PATH:/usr/local/bin"`  
 
 Path issues:  
 

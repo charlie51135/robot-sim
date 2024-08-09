@@ -1,7 +1,7 @@
 /*
 Description: All functions to read and write to the shared I2C registers on the Romi board. 
 
-Notes: Changes made to this file must also be made to the data structure in RomiRPiSlave.ino
+Notes: Changes made to this file must also be made to the data structure in Arduino/RomiRPiSlave.ino
 */
 
 #include "romi_base/a_star.h"
