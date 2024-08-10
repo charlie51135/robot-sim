@@ -16,7 +16,7 @@ A byte-to-byte copy must be made to create an image of the full OS. This was ori
 3. Shrink the image using PiShrink  
     `sudo pishrink.sh -va backup_image.img shrunk_image.img`
 
-4. Zip the file for uploading
+4. Zip the file for uploading  
     `gzip -kv shrunk_image.img`
 
 These steps were able to get a 3.5GB .img.gz file from a 128GB OS.
@@ -24,9 +24,9 @@ These steps were able to get a 3.5GB .img.gz file from a 128GB OS.
 
 ## Upload the image to a USB drive
 
-1. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
+1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 
-2. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+2. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
 
 3. Make the following selections:
    ```

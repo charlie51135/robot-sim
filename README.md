@@ -93,9 +93,9 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Install Raspberry Pi Image
 
-1. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
+1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 
-2. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+2. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
 
 3. Make the following selections:
    ```
@@ -111,7 +111,7 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 
 The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
 
-PC steps:
+Steps for PC with Ubuntu 20.04 and ROS Neotic:
 
 1. Create or `cd` into a ROS Noetic catkin workspace
    ```console
