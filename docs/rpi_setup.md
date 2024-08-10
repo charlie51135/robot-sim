@@ -13,9 +13,12 @@ References:
 	To add WiFi manually: `sudo nano /etc/netplan/50-cloud-init.yaml`
 
 2. On linux system: open system-boot drive in terminal  
+	`cd /media/*user*/system-boot`  
+
+	Decompress vmlinuz  
 	`sudo dd if=vmlinuz bs=1 | zcat > vmlinux`
 
-3. Add the following under [pi4]  
+3. Update under [pi4] to  
 	`nano config.txt`
 	```
 	max_framebuffers=2
@@ -80,7 +83,7 @@ References:
 	```
 	Save file
 
-5. Find and mount linux parition:  
+5. Find and mount linux parition:  *(for convention only, can skip to step 6 then unmount both system-boot and writable instead)*  
 	* `sudo fdisk -l` (see which is linux partition)  
 	* `sudo mkdir /media/usb-drive`  
 	* `sudo mount /dev/sda2 /media/usb-drive/`  
@@ -106,8 +109,8 @@ Perm fix?:
 `@reboot dhclient -v`
 
 Check if using WiFi or lan: `ip route`  
-To change default from wlan0 to eth0
-`sudo apt install net-tools`  
+To change default from wlan0 to eth0 
+`sudo apt install net-tools` (optional)  
 `ip route`  
 `sudo route delete default gw <IP Address> <Adapter>`  
 `sudo route add default gw <IPAddress> <Adapter>`  
@@ -116,10 +119,11 @@ Recheck with `ip route` and see improved speeds with
 
 
 `sudo apt update`  
-`sudo apt upgrade`
+`sudo apt upgrade`  
+*Cache lock: `sudo reboot`*  
 
 Add no password commands with:
-`visudo`  
+`visudo` (optional)  
 Add the following at the end:
 ```
 <user> ALL = (root) NOPASSWD: /sbin/halt

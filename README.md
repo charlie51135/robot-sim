@@ -93,9 +93,17 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Install Raspberry Pi Image
 
-1. Install the [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
-   
-2. Install Ubuntu 20.04 Server
+1. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
+
+2. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+
+3. Make the following selections:
+   ```
+    Choose Device > Pi 4
+    Choose OS > Use Custom > rpi_romi_os.img.gz
+    Choose Storage > Select USB drive
+   ```
+4. Write to the USB
 
 ### Setup ROS workspaces
 
@@ -195,7 +203,6 @@ The communication between the PC and the Raspberry Pi is through a WiFi network 
    </div>
 </div>
 
-
 </br>
 </br>
 
@@ -206,6 +213,7 @@ The communication between the PC and the Raspberry Pi is through a WiFi network 
 * [Camera Setup](docs/rpi_camera.md)
 * [Power Consumption](docs/power.md)
 * [Accuracy Testing](docs/accuracy_testing.md)
+* [Image Creation](docs/create_img.md)
 
 </br>
 
