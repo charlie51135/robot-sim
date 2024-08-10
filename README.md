@@ -111,6 +111,8 @@ This workspace should be setup on both a PC and the Romi Raspberry Pi for full u
 
 The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
 
+PC steps:
+
 1. Create or `cd` into a ROS Noetic catkin workspace
    ```console
    mkdir -p ~/catkin_ws/src
