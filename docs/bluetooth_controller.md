@@ -22,7 +22,7 @@ Testing the joystick: http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystic
 3. `rosrun teleop_twist_joy teleop_node`
 
 ## Updating the launch file
-```
+```xml
 <param name="joy_node/dev" value="/dev/input/js0"/>
 <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
 <node name="teleop_twist_joy" pkg="teleop_twist_joy" type="teleop_node" output="screen"/>

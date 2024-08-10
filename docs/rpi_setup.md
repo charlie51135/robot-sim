@@ -83,7 +83,7 @@ References:
 	```
 	Save file
 
-5. Find and mount linux parition:  *(for convention only, can skip to step 6 then unmount both system-boot and writable instead)*  
+5. Find and mount linux partition:  *(for convention only, can skip to step 6 then unmount both system-boot and writable instead)*  
 	* `sudo fdisk -l` (see which is linux partition)  
 	* `sudo mkdir /media/usb-drive`  
 	* `sudo mount /dev/sda2 /media/usb-drive/`  

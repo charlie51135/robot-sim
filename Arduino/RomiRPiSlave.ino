@@ -85,11 +85,12 @@ void loop()
   slave.buffer.buttonB = buttonB.isPressed();
   slave.buffer.buttonC = buttonC.isPressed();
 
+  // Drive straight when button A is pressed
   if (slave.buffer.buttonA && drivingFlag == false) {
-    Serial.print("button pressed\n");
     driveStraight(100,104,100);
   }
 
+  // Mux for motor control. Local drive straight function overrides cmds
   if (drivingFlag == true) {
     driveStraight(100,104,100);
   } else motors.setSpeeds(slave.buffer.leftMotor, slave.buffer.rightMotor);
@@ -101,7 +102,7 @@ void loop()
     slave.buffer.analog[i] = analogRead(i);
   }
 
-  // READING the buffer is allowed before or after finalizeWrites().
+  // Set LEDs
   ledYellow(slave.buffer.yellow);
   ledGreen(slave.buffer.green);
   ledRed(slave.buffer.red);
@@ -128,6 +129,7 @@ void loop()
     startedPlaying = false;
   }
 
+  // Read encoder counts
   slave.buffer.leftEncoder = encoders.getCountsLeft();
   slave.buffer.rightEncoder = encoders.getCountsRight();
 
@@ -154,16 +156,15 @@ uint32_t countForDistance(float wheel_diam, uint16_t cnt_per_rev, float distance
 int x, leftPulseCount, rightPulseCount, leftPulseCountReq, rightPulseCountReq;
 void driveStraight(int speedLeft, int speedRight, float distance) {
 
-  //Drive motor until it has received x pulses
+  // Drive motor until it has received x pulses
   if (drivingFlag == false) {
-    Serial.print("Set Driving Flag true\n");
 
     drivingFlag = true;
-    //Total amount of encoder pulses received
+    // Total amount of encoder pulses received
     leftPulseCountReq = encoders.getCountsLeft();
     rightPulseCountReq = encoders.getCountsRight();
 
-    //Amount of encoder pulses needed to achieve distance
+    // Amount of encoder pulses needed to achieve distance
     x = countForDistance(7, 1437, distance);
 
     // Add x to both left and right encoder counts
@@ -172,28 +173,27 @@ void driveStraight(int speedLeft, int speedRight, float distance) {
    
     motors.setSpeeds(speedLeft, speedRight);
 
-  } else { // driving flag == true
+  } else { // Driving flag == true
     if ((encoders.getCountsLeft() % INT_MAX) < leftPulseCountReq && (encoders.getCountsRight() % INT_MAX) < rightPulseCountReq) {
       
-      Serial.print("Currently driving\n");
       // Assign variable to hold encoder count
       leftPulseCount = encoders.getCountsLeft() % INT_MAX;
       rightPulseCount = encoders.getCountsRight() % INT_MAX;
 
      
-      //If the left encoder count is less than the right, increase the left motor speed
+      // If the left encoder count is less than the right, increase the left motor speed
       if (leftPulseCount < rightPulseCount) {
         motors.setSpeeds(speedLeft+4, speedRight);
       }
      
-      //If the right encoder count is less than the left, increase the right motor speed
+      // If the right encoder count is less than the left, increase the right motor speed
       else if (rightPulseCount < leftPulseCount) {
         motors.setSpeeds(speedLeft, speedRight+4);
       }
       else {
         motors.setSpeeds(speedLeft, speedRight);
       }
-    } else { // done driving
+    } else { // Done driving
       motors.setSpeeds(0, 0);
       drivingFlag = false;
     }

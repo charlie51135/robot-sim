@@ -1,15 +1,15 @@
 # Getting multiple robots to properly display in Rviz and Gazebo
 
 1. Use the group tag to create two robot namespaces.  
-    ```
+    ```xml
     <group ns="robot1">
     </group>
     ```
 
 2. Each has a different TF prefix which is entered into RViz.
-    ```
+    ```xml
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-        <param name="tf_prefix" value="robot" />
+        <param name="tf_prefix" value="robot1" />
     </node>
     ```
 
