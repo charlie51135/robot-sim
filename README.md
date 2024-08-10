@@ -107,7 +107,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Setup ROS workspaces
 
-This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. This GitHub repo contains both the PC and RPi nodes and will automatically build the correct files based on the device architecture.  
+This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. This GitHub repo contains both the PC and RPi nodes and will automatically build the correct files based on the device architecture. The Raspberry Pi image above already includes a copy of this repo.  
 
 The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
 
