@@ -20,10 +20,13 @@ Modify the following IP address parameters for ***X*** PC and ***Y*** Raspberry 
 Helpful: Install remote SSH plugin on VScode for easier editing and terminal access  
 
 
-Potential Issue:   
+### Potential issue:   
 > RLException: ERROR: could not contact master [http://192.168.X.X:11311/]  
 
 1. View all open ports  
 `sudo lsof -i -P -n`  
 
 1. VScode for RPi was autoforwarding the port, killed process  
+
+### Additional resources:  
+* http://wiki.ros.org/ROS/Tutorials/MultipleMachines

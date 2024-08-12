@@ -96,7 +96,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Install Raspberry Pi Image
 
-1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) for windows or `sudo snap install rpi-imager` for Linux
 
 2. Download the [image file](https://drive.google.com/file/d/1gfvOr653rBKGsRue2pg0K5v4wNSrjCS1/view?usp=sharing)
 
@@ -166,37 +166,48 @@ Steps for PC with Ubuntu 20.04 and ROS Neotic:
    
 ## Usage
 
-1. Configure [WiFi settings](docs/ros_ip_setup.md)
-
-2. Launch RViz, the robot desciption and the controllers from a PC:
-   ```console
-   roslaunch my_robot romi_base.launch
-   ```
-   *Note: roslaunch will automatically start a [ROS Master](http://wiki.ros.org/Master) if one does not exist*  
-
-3. Launch the hardware interface on the Raspberry Pi:
-   ```console
-   roslaunch romi_base romi_hw.launch
-   ```
-
-4. Launch the camera node on the Raspberry Pi:
-   ```console
-   roslaunch romi_camera romi_camera_node.launch
-   ```
-
-5. Launch the LiDAR node on the Raspberry Pi:
-   ```console
-   roslaunch ldlidar ld19.launch
-   ```
-6. Launch the SLAM node on the PC:
-   ```console
-   roslaunch slam_toolbox online_async.launch
-   ```
-
-The nodes are modularized but may be launched together by adding an include line to a .launch file
+Nodes and configurations are setup in launch files. The order of the launch files does not matter. The only prerequisite is that a ROS Master exists on the PC. The nodes are modularized but may be launched together by adding an include line to a .launch file
 ```xml
 <include file="$(find *package_name*)/launch/*launch_file_name*.launch"/>
 ```
+
+1. Configure [WiFi settings](docs/ros_ip_setup.md)
+
+2. PC launch files:
+   
+   * Launch robot description, robot state publisher and RViz
+      ```console
+      roslaunch my_robot romi_base.launch
+      ```
+      *Note: roslaunch will automatically start a [ROS Master](http://wiki.ros.org/Master) if one does not exist*  
+
+   * Launch teleop-twist-keyboard node
+      ```
+      roslaunch my_robot keyboard_control.launch
+      ```
+      *Note: This terminal window must be active to receive keyboard commands* 
+
+   * Launch SLAM node:
+      ```console
+      roslaunch slam_toolbox online_async.launch
+      ```
+
+3. Raspberry Pi launch files:
+   
+   * Launch hardware interface
+      ```console
+      roslaunch romi_base romi_hw.launch
+      ```
+
+   * Launch camera node
+      ```console
+      roslaunch romi_camera romi_camera_node.launch
+      ```
+
+   * Launch LiDAR node
+      ```console
+      roslaunch ldlidar ld19.launch
+      ```
 
 ## System Overview
 
