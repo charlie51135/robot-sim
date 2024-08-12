@@ -69,9 +69,10 @@ void RomiHWInterface::write(const ros::Time &time, const ros::Duration &period) 
     // Set Leds
     uint8_t green = 255;
     uint8_t red = 0;
-    // a_star.setYellowLed(yellow); // reserved for romi_base node
     // a_star.setGreenLed(green);
     // a_star.setRedLed(red);
+
+    // a_star.setYellowLed(yellow); // reserved for romi_base node
 }
 
 // Calculate the change in encoder counts accounting for overflow and underflow

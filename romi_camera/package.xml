@@ -4,7 +4,6 @@
   <version>0.0.0</version>
   <description>The romi_camera package</description>
   <maintainer email="charlie@todo.todo">charlie</maintainer>
-
   <license>TODO</license>
 
   <buildtool_depend>catkin</buildtool_depend>
