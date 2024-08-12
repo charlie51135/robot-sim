@@ -1,8 +1,10 @@
-# Setup IP addresses for X ROS_MASTER
+# Setup IP addresses for ROS WiFi communication
 
-1. Edit master .bashrc file:  
+Modify the following IP address parameters for ***X*** PC and ***Y*** Raspberry Pi. They are located at the bottom of the .bashrc file.
+
+1. Edit PC (master) .bashrc file:  
         `nano ~/.bashrc`
-
+        
         export ROS_MASTER_URI=http://X.X.X.X:11311
         export ROS_IP=X.X.X.X
 
@@ -11,6 +13,9 @@
 
         export ROS_MASTER_URI=http://X.X.X.X:11311  
         export ROS_IP=Y.Y.Y.Y
+
+3. Source the updated .bashrc files  
+        `source ~/.bashrc`
 
 Helpful: Install remote SSH plugin on VScode for easier editing and terminal access  
 
@@ -21,4 +26,4 @@ Potential Issue:
 1. View all open ports  
 `sudo lsof -i -P -n`  
 
-2. VScode for RPi was autoforwarding the port, killed process  
+1. VScode for RPi was autoforwarding the port, killed process  
