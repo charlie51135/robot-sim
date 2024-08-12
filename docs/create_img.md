@@ -27,7 +27,7 @@ These steps were able to get a 3.6GB .img.gz file from a 128GB OS.
 
 ## Upload the image to a USB drive
 
-1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) for Windows or `sudo snap install rpi-imager` for Linux
 
 2. Download the [image file](https://drive.google.com/file/d/1gfvOr653rBKGsRue2pg0K5v4wNSrjCS1/view?usp=sharing)
 
