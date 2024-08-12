@@ -96,7 +96,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Install Raspberry Pi Image
 
-1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) for windows or `sudo snap install rpi-imager` for Linux
+1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) for Windows or `sudo snap install rpi-imager` for Linux
 
 2. Download the [image file](https://drive.google.com/file/d/1gfvOr653rBKGsRue2pg0K5v4wNSrjCS1/view?usp=sharing)
 
@@ -127,11 +127,9 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 ### Setup ROS workspaces
 
-This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. This GitHub repo contains both the PC and RPi nodes and will automatically build the correct files based on the device architecture. The Raspberry Pi image above already includes a copy of this repo.  
+This workspace should be setup on both a PC and the Romi Raspberry Pi for full usage. This GitHub repo contains both the PC and RPi nodes and will automatically build the correct files based on the device architecture. The Raspberry Pi image above already includes a copy of this repo.   
 
-The PC will run the ROS master and display the RViz and Gazebo windows. The Raspberry Pi will run the hardware interface with the Romi board, as well as all sensor nodes. 
-
-Steps for PC with Ubuntu 20.04 and ROS Neotic:
+Steps for PC setup with Ubuntu 20.04 and ROS Neotic:
 
 1. Create or `cd` into a ROS Noetic catkin workspace
    ```console
@@ -166,7 +164,7 @@ Steps for PC with Ubuntu 20.04 and ROS Neotic:
    
 ## Usage
 
-Nodes and configurations are setup in launch files. The order of the launch files does not matter. The only prerequisite is that a ROS Master exists on the PC. The nodes are modularized but may be launched together by adding an include line to a .launch file
+Nodes and configurations are setup in launch files. The order of the launch files does not matter. The only prerequisite is that a [ROS Master](http://wiki.ros.org/Master) exists on the PC. The nodes are modularized but may be launched together by adding an include line to a .launch file
 ```xml
 <include file="$(find *package_name*)/launch/*launch_file_name*.launch"/>
 ```
@@ -179,7 +177,7 @@ Nodes and configurations are setup in launch files. The order of the launch file
       ```console
       roslaunch my_robot romi_base.launch
       ```
-      *Note: roslaunch will automatically start a [ROS Master](http://wiki.ros.org/Master) if one does not exist*  
+      *Note: roslaunch will automatically start a ROS Master if one does not exist*  
 
    * Launch teleop-twist-keyboard node
       ```
