@@ -7,6 +7,9 @@ A byte-to-byte copy must be made to create an image of the full OS. This was ori
 
 ## Shrink and compress the image
 
+* Ensure sufficient space to write location: `df -h`  
+* Check for drive name after plugging in: `dmesg`  
+
 1. Copy the drive using dd  
     `sudo dd if=/dev/sda conv=sync,noerror status=progress bs=64K | gzip -c  > /home/charlie/robot_os/backup_image.img.gz`
 
@@ -14,12 +17,12 @@ A byte-to-byte copy must be made to create an image of the full OS. This was ori
     `gunzip backup_image.img.gz`
 
 3. Shrink the image using PiShrink  
-    `sudo pishrink.sh -va backup_image.img shrunk_image.img`
+    `sudo pishrink.sh -va backup_image.img`
 
 4. Zip the file for uploading  
-    `gzip -kv shrunk_image.img`
+    `gzip -kv backup_image.img`
 
-These steps were able to get a 3.5GB .img.gz file from a 128GB OS.
+These steps were able to get a 3.9GB .img.gz file from a 128GB OS.
 
 
 ## Upload the image to a USB drive

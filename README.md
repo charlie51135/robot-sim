@@ -33,14 +33,17 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 - Raspberry Pi Model 4B
 - Raspberry Pi Camera V2.1
 - LD19 LiDAR Module
-- Compact USB or MicroSD card
+- Compact USB (min 32GB, USB 3.0)
 
 ### Power Supply
 - 6 Rechargable AA Batteries
 
 ### Hardware
 - M2 Assorted Nylon/Brass Standoffs
-- 13 M2x6mm Machine Screws
+- Machine Screws:
+  * 4x M2 for Raspberry Pi
+  * 4x M2 + 3x M2.5 for LiDAR mount
+  * 2x M2 for Camera Mount
 - 40 Pin Pi Header Extender (Optional)
 
 ### 3D Printed Parts
@@ -95,7 +98,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 
-2. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
+2. Download the [image file](https://drive.google.com/file/d/1gfvOr653rBKGsRue2pg0K5v4wNSrjCS1/view?usp=sharing)
 
 3. Make the following selections:
    ```
@@ -104,6 +107,19 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
     Choose Storage > Select USB drive
    ```
 4. Write to the USB
+
+5. WiFi configuration can also be done on a Linux machine.  
+   * Plug in USB  
+   * `sudo nano /media/*user*/writable/etc/netplan/50-cloud-init.yaml`  
+   * Edit the WiFi SSID and Password  
+   * Save and exit: *Ctrl+s, Ctrl+x*  
+   
+6. Default login:
+   ```
+   User: romi
+   Password: romi32u4
+   ```
+   Change password with `passwd`  
 
 ### Setup ROS workspaces
 

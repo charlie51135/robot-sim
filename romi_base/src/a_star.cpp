@@ -75,8 +75,8 @@ void AStar::setMotors(int left_speed, int right_speed) {
 
 
 // Writes a boolean flag to register 43 to indicate a new command has been sent
-void setNewTarget(bool new_target) {
-    wiringPiI2CWriteReg8(fd, 43, new_target)
+void AStar::setNewTarget(bool new_target) {
+    wiringPiI2CWriteReg8(fd, 43, new_target);
 
     if (DEBUG_MODE) {
         std::cout << "Set new target" << std::endl;
