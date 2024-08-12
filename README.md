@@ -102,19 +102,23 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 3. Make the following selections:
    ```
-    Choose Device > Pi 4
-    Choose OS > Use Custom > rpi_romi_os.img.gz
-    Choose Storage > Select USB drive
+    > Choose Device > Pi 4
+    > Choose OS > Use Custom > rpi_romi_os.img.gz
+    > Choose Storage > Select USB drive
+    > Next
+
+   Would you like to apply OS customization settings? > No  
    ```
+
 4. Write to the USB
 
-5. WiFi configuration can also be done on a Linux machine.  
+5. WiFi configuration can be done on a Linux machine.  
    * Plug in USB  
    * `sudo nano /media/*user*/writable/etc/netplan/50-cloud-init.yaml`  
    * Edit the WiFi SSID and Password  
    * Save and exit: *Ctrl+s, Ctrl+x*  
    
-6. Default login:
+6. Raspberry Pi default login:
    ```
    User: romi
    Password: romi32u4
@@ -154,7 +158,9 @@ Steps for PC with Ubuntu 20.04 and ROS Neotic:
 
 5. Source packages:
    ```console
-   source ~/catkin_ws/devel/setup.bash
+   echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+   echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+   source ~/.bashrc
    ```
 
    

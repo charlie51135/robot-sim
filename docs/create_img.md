@@ -22,19 +22,36 @@ A byte-to-byte copy must be made to create an image of the full OS. This was ori
 4. Zip the file for uploading  
     `gzip -kv backup_image.img`
 
-These steps were able to get a 3.9GB .img.gz file from a 128GB OS.
+These steps were able to get a 3.6GB .img.gz file from a 128GB OS.
 
 
 ## Upload the image to a USB drive
 
 1. Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 
-2. Download the [image file](https://drive.google.com/file/d/19PCCLNUG7Y_Z2sCio9Wgoz943875dg4B/view?usp=sharing)
+2. Download the [image file](https://drive.google.com/file/d/1gfvOr653rBKGsRue2pg0K5v4wNSrjCS1/view?usp=sharing)
 
 3. Make the following selections:
    ```
-    Choose Device > Pi 4
-    Choose OS > Use Custom > rpi_romi_os.img.gz
-    Choose Storage > Select USB drive
+    > Choose Device > Pi 4
+    > Choose OS > Use Custom > rpi_romi_os.img.gz
+    > Choose Storage > Select USB drive
+    > Next
+
+   Would you like to apply OS customization settings? > No  
    ```
+
 4. Write to the USB
+
+5. WiFi configuration can be done on a Linux machine.  
+   * Plug in USB  
+   * `sudo nano /media/*user*/writable/etc/netplan/50-cloud-init.yaml`  
+   * Edit the WiFi SSID and Password  
+   * Save and exit: *Ctrl+s, Ctrl+x*  
+   
+6. Raspberry Pi default login:
+   ```
+   User: romi
+   Password: romi32u4
+   ```
+   Change password with `passwd`  
