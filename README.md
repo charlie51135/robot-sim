@@ -86,7 +86,7 @@ This project is a ROS simulation for the Pololu Romi robot. The Romi communicate
 
 3. Install Pololu A-Star Boards in the boards manager
 
-4. Install windows drivers https://www.pololu.com/docs/0J69/5.1
+4. Install drivers (Windows only) https://www.pololu.com/docs/0J69/5.1
 
 5. Restart IDE
 
