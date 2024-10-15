@@ -164,33 +164,36 @@ Steps for PC setup with Ubuntu 20.04 and ROS Neotic:
    
 ## Usage
 
-Nodes and configurations are setup in launch files. The order of the launch files does not matter. The only prerequisite is that a [ROS Master](http://wiki.ros.org/Master) exists on the PC. The nodes are modularized but may be launched together by adding an include line to a .launch file
+Nodes and configurations are setup in launch files. The order of the launch files does not matter. The nodes are modularized but may be launched together by adding an include line to a .launch file
 ```xml
 <include file="$(find *package_name*)/launch/*launch_file_name*.launch"/>
 ```
 
 1. Configure [WiFi settings](docs/ros_ip_setup.md)
 
-2. PC launch files:
+2. Usage for physical robot (real hardware):  
+   </br>
+   **PC launch files**
    
    * Launch robot description, robot state publisher and RViz
       ```console
       roslaunch my_robot romi_base.launch
-      ```
-      *Note: roslaunch will automatically start a ROS Master if one does not exist*  
-
-   * Launch teleop-twist-keyboard node
-      ```
-      roslaunch my_robot keyboard_control.launch
-      ```
-      *Note: This terminal window must be active to receive keyboard commands* 
+      ``` 
 
    * Launch SLAM node:
       ```console
       roslaunch slam_toolbox online_async.launch
       ```
 
-3. Raspberry Pi launch files:
+   * Launch teleop-twist-keyboard node
+      ```
+      roslaunch my_robot keyboard_control.launch
+      ```
+      *Note: This terminal window must be active to receive keyboard commands*
+
+   </br>
+
+   **Raspberry Pi launch files**
    
    * Launch hardware interface
       ```console
@@ -206,6 +209,22 @@ Nodes and configurations are setup in launch files. The order of the launch file
       ```console
       roslaunch ldlidar ld19.launch
       ```
+   </br>
+
+3. Usage for simulation only:  
+   </br>
+   **PC launch files**
+
+   * Launch simulation environment
+      ```console
+      roslaunch my_robot romi_sim.launch
+      ``` 
+
+   * Launch teleop-twist-keyboard node
+      ```
+      roslaunch my_robot keyboard_control.launch
+      ```
+      *Note: This terminal window must be active to receive keyboard commands* 
 
 ## System Overview
 

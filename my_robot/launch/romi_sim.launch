@@ -2,8 +2,16 @@
     <!-- Set the use_sim_time parameter for simulation -->
     <param name="/use_sim_time" value="true"/>
 
+    <!-- Set argument to enable/disable simulation-specific configuration -->
+    <arg name="use_simulation" default="true"/>
+
     <!-- Launch romi description -->
-    <include file="$(find my_robot)/launch/romi_description.launch"/>
+    <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/urdf/romi.urdf.xacro' use_simulation:=$(arg use_simulation)"/>
+    <!-- Run the robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    </node>
+
     <!-- Launch romi controller manager -->
     <include file="$(find my_robot)/launch/romi_control.launch"/>
     <!-- Launch RVIZ -->

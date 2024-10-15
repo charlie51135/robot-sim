@@ -4,7 +4,6 @@
 
     <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-        output="screen" ns="/robot" args="diff_drive_controller joint_state_controller">
-        <!-- <remap from="/cmd_vel" to="/robot/cmd_vel"/> -->
+        output="screen" args="diff_drive_controller joint_state_controller">
     </node>
 </launch>

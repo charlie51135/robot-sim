@@ -1,16 +1,22 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
 
+    <!-- Accept argument to enable/disable simulation-specific configuration -->
+    <xacro:arg name="use_simulation" default="false"/>
+
+
     <xacro:include filename="romi_core.xacro"/>
     <!-- <xacro:include filename="romi_camera.xacro"/> -->
     <xacro:include filename="romi_lidar.xacro"/>
 
     <!-- For sim only -->
-    <!-- <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace>robot</robotNamespace>
-        </plugin>
-    </gazebo> -->
+    <xacro:if value="$(arg use_simulation)">
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            </plugin>
+        </gazebo>
+    </xacro:if>
+
 
     <transmission name="left_wheel_transmission">
         <type>transmission_interface/SimpleTransmission</type>

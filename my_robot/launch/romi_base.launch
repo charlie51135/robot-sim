@@ -1,4 +1,11 @@
 <launch>
+    <!-- Set environment variables for real robot wifi setup -->
+    <!-- X.X.X.X IP address of master (PC) -->
+    <env name="ROS_MASTER_URI" value="http://X.X.X.X:11311"/>
+    <env name="ROS_IP" value="X.X.X.X"/>
+
+
+
     <!-- Convert XACRO to URDF and load to parameter server -->
     <param name="robot_description" command="$(find xacro)/xacro '$(find my_robot)/description/urdf/romi.urdf.xacro'"/>
     
